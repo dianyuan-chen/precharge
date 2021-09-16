@@ -1,6 +1,6 @@
 #ifndef __HIGHVOLTAGE_H
 #define __HIGHVOLTAGE_H
-extern int v_bat, v_v1;
+int v_bat, v_v1;//定义BAT电压与V1电压
 enum Voltage
 {
 	BAT = 0,//定义BAT端电压名称为BAT值为0

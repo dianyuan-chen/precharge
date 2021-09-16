@@ -3,7 +3,8 @@
 #define BOOL int
 #define TRUE 1
 #define FALSE 0
-extern BOOL charge, pre_charge;
+BOOL charge;	//总正开关状态
+BOOL pre_charge;//预充开关状态
 enum instruct
 {
 	ONCHARGE = 1,//闭合总正
