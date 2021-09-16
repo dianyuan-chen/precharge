@@ -3,10 +3,8 @@
 extern int v_bat, v_v1;
 enum Voltage
 {
-	BAT = 0,//BAT电压
-	V1 = 1//V1电压
+	BAT = 0,//定义BAT端电压名称为BAT值为0
+	V1 = 1 //定义V1端电压名称为V1值为1
 };
-
-unsigned char Hv_Get(int v_type);	//获取电压
-
+int Hv_Get(enum Voltage v_type);	//获取电压
 #endif

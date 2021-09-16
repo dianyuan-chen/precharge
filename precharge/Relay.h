@@ -6,10 +6,10 @@
 extern BOOL charge, pre_charge;
 enum instruct
 {
-	ONCHARGE = 1,	//闭合总正
-	ONPRECHARGE,	//闭合预充
-	OFFCHARGE,	//段开总正
-	OFFPRECHARGE	//段开预充
+	ONCHARGE = 1,//闭合总正
+	ONPRECHARGE,//闭合预充
+	OFFCHARGE,//断开总正
+	OFFPRECHARGE//断开预充
 };
-void RelayM_Control();	//控制继电器开关
+void RelayM_Control(enum instruct ins);	//控制继电器开关
 #endif

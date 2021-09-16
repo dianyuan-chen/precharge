@@ -1,13 +1,13 @@
 #include "HighVoltage.h"
 
-unsigned char Hv_Get(enum Voltage v_type)	//获取电压
+int Hv_Get(enum Voltage v_type)	//获取电压
 {
-	if(v_type == BAT)
+	if (v_type == BAT)	//若获取电压为BAT，则返回BAT端电压v_bat
 	{
-		//获取BAT电压
+		return v_bat;
 	}
-	else
+	else	//若获取电压为V1，则返回V1端电压v_v1
 	{
-		//获取V1电压
+		return v_v1;
 	}
 }
