@@ -14,3 +14,8 @@ void RelayM_Control(RelayM_Switch RelayM_switch, BOOL act)
 		pre_charge = act;
 	}
 }
+void RelayM_Change()//预充闭合总正断开情况下，闭合总正 断开预充
+{
+	charge = 1;
+	pre_charge = 0;
+}

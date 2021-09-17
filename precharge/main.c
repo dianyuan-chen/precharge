@@ -1,8 +1,9 @@
-#include "state.h"
+#include "Node.h"
 
 void main(void)
 {
-	Turn_On();
+	Node_Start();
+
 	for (;;)
 	{
 		;

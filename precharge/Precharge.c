@@ -3,6 +3,14 @@
 #include "RelayM.h"
 #include "HighVoltage.h"
 
+void ChargeM_Start()	//启动预充
+{
+	RelayM_Control(RelayM_MasterSwitch, ON);
+}
+void ChargeM_Stop()	//停止预充
+{
+	RelayM_Control(RelayM_MasterSwitch, OFF);
+}
 void PrechargeM_Start()	//启动预充
 {
 	RelayM_Control(RelayM_PreSwitch, ON);
@@ -11,7 +19,7 @@ void PrechargeM_Start()	//启动预充
 }
 void PrechargeM_Stop()	//停止预充
 {
-	RelayM_Control(RelayM_MasterSwitch, OFF);
+	RelayM_Control(RelayM_PreSwitch, OFF);
 }
 BOOL PrechargeM_IsFinish()	//判断V1是否大于95%Bat
 {
@@ -24,11 +32,11 @@ BOOL PrechargeM_IsFinish()	//判断V1是否大于95%Bat
 		return FALSE;
 	}
 }
-BOOL PrechargeM_IsFail(clock_t start_time)	//超时
+BOOL PrechargeM_IsFail()	//超时
 {
 	end = clock();		//此刻时间
 	printf("end time:%5ld  |  ", end);
-	double time = (double)((double)end - (double)start_time) / CLOCKS_PER_SEC;//经过的时间
+	double time = (double)((double)end - (double)start) / CLOCKS_PER_SEC;//经过的时间
 	printf("end - start time:%.3lf\n", time);
 	if (time > FAIL_TIME)//判断是否超过3秒
 	{
